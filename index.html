@@ -6,28 +6,28 @@
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-   //      for(var i=0; i<window.geemails.length; i++){
+        for(var i=0; i<window.geemails.length; i++){
 
-			// var emailContainer = document.createElement('div');
-			// emailContainer.className = 'emailContainer';
+			var emailContainer = document.createElement('div');
+			emailContainer.className = 'emailContainer';
 
-   //      	var date = document.createElement('div');
-   //      	date.className = 'dateDiv';
-   //      	date.innerHTML = window.geemails[i].date;
-   //  		emailContainer.appendChild(date);
+         	var date = document.createElement('div');
+         	date.className = 'dateDiv';
+         	date.innerHTML = window.geemails[i].date;
+     		emailContainer.appendChild(date);
 
-			// var sender = document.createElement('div');
-			// sender.className = 'senderDiv';
-			// sender.innerHTML = window.geemails[i].sender;
-			// emailContainer.appendChild(sender);
+			var sender = document.createElement('div');
+			sender.className = 'senderDiv';
+			sender.innerHTML = window.geemails[i].sender;
+			emailContainer.appendChild(sender);
 
-			// // var body = document.createElement('div')
-			// // sender.innerHTML = window.geemails[i].body;
-			// // emailContainer.appendChild(body);
+			var body = document.createElement('div')
+			sender.innerHTML = window.geemails[i].body;
+			emailContainer.appendChild(body);
 
-   //      	var container = document.getElementById('main');
-   //      	container.appendChild(emailContainer);
-   //      };
+         	var container = document.getElementById('main');
+         	container.appendChild(emailContainer);
+         };
       };
     </script>
 	</head>
@@ -35,7 +35,7 @@
 		<div class="container" id="main">
 		</div>
 		<div></div>
-		<script type="text/javascript" src="emails.js"></script>
-		
+	
+
 	</body>
 </html>
