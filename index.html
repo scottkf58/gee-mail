@@ -16,6 +16,11 @@
          	date.innerHTML = window.geemails[i].date;
      		emailContainer.appendChild(date);
 
+     		var subject = document.createElement('div');
+     		subject.className = 'subjectDiv';
+     		subject.innerHTML = window.geemails[i].subject;
+     		emailContainer.appendChild(subject);
+
 			var sender = document.createElement('div');
 			sender.className = 'senderDiv';
 			sender.innerHTML = window.geemails[i].sender;
