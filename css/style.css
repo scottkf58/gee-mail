@@ -1,0 +1,16 @@
+#main {
+	display: flex;
+	flex-flow: column;
+}
+
+
+.emailContainer {
+	display: flex;
+	flex-flow: row;
+	margin: 10px;
+}
+
+.senderDiv {
+	color: red;
+	margin: 10px;
+}
