@@ -1,20 +1,26 @@
 #main {
-	display: flex;
+	display: ;
 	flex-flow: column;
 }
 
-
+h1{
+	text-align: center;
+}
 .emailContainer {
-	display: flex;
+	display: inline-flex;
 	flex-flow: row;
-	margin: 10px;
+	
 }
 
 .senderDiv {
-	color: red;
-	margin: 10px;
+	font-size: 16px;
 }
 
 .dateDiv {
+	color: red;
+	font-size: 12px;
 
+}
+.subjectDiv {
+	color: blue;
 }
