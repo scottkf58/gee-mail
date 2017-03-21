@@ -30,6 +30,11 @@
 			sender.innerHTML = window.geemails[i].body;
 			emailContainer.appendChild(body);
 
+			var emailCount = document.createElement('div');
+			var geemailCount = geemails.length;
+			emailCount.innerHTML = "Inbox: "+geemailCount;
+			emailContainer.appendChild(emailCount);
+
          	var container = document.getElementById('main');
          	container.appendChild(emailContainer);
          };
