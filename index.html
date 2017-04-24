@@ -6,38 +6,42 @@
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
+
+        var emailCount = document.createElement('div');
+        var geemailCount = geemails.length;
+        emailCount.innerHTML = "Inbox: "+geemailCount;
+        main.appendChild(emailCount);
+
+        function setInterval(){
+
+        }
+
         for(var i=0; i<window.geemails.length; i++){
+          var emailContainer = document.createElement('div');
+          emailContainer.className = 'emailContainer';
+ 
+          var date = document.createElement("div");
+          date.id = "dateDiv";
+          date.innerHTML = window.geemails[i].date;
+          main.appendChild(date);
 
-			var emailContainer = document.createElement('div');
-			emailContainer.className = 'emailContainer';
+          var sender = document.createElement("div");
+          sender.id = "senderDiv";
+          sender.innerHTML = window.geemails[i].sender;
+          main.appendChild(sender);
 
-         	var date = document.createElement('div');
-         	date.className = 'dateDiv';
-         	date.innerHTML = window.geemails[i].date;
-     		emailContainer.appendChild(date);
+          var subject = document.createElement("div");
+          subject.id = "subjectDiv";
+          subject.innerHTML = window.geemails[i].subject;
+          main.appendChild(subject);
 
-     		var subject = document.createElement('div');
-     		subject.className = 'subjectDiv';
-     		subject.innerHTML = window.geemails[i].subject;
-     		emailContainer.appendChild(subject);
+          var body = document.createElement("div");
+          body.id = "bodyDiv";
+          body.innerHTML = window.geemails[i].body;
+          main.appendChild(body);
 
-			var sender = document.createElement('div');
-			sender.className = 'senderDiv';
-			sender.innerHTML = window.geemails[i].sender;
-			emailContainer.appendChild(sender);
-
-			var body = document.createElement('div')
-			sender.innerHTML = window.geemails[i].body;
-			emailContainer.appendChild(body);
-
-			var emailCount = document.createElement('div');
-			var geemailCount = geemails.length;
-			emailCount.innerHTML = "Inbox: "+geemailCount;
-			emailContainer.appendChild(emailCount);
-
-         	var container = document.getElementById('main');
-         	container.appendChild(emailContainer);
-         };
+          
+        }
       };
     </script>
 	</head>
@@ -46,7 +50,5 @@
 		<div class="container" id="main">
 		</div>
 		<div></div>
-	
-
 	</body>
 </html>
