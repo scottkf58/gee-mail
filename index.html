@@ -16,32 +16,48 @@
 
         }
 
-        for(var i=0; i<window.geemails.length; i++){
-          var emailContainer = document.createElement('div');
-          emailContainer.className = 'emailContainer';
- 
-          var date = document.createElement("div");
-          date.id = "dateDiv";
-          date.innerHTML = window.geemails[i].date;
-          main.appendChild(date);
-
-          var sender = document.createElement("div");
-          sender.id = "senderDiv";
-          sender.innerHTML = window.geemails[i].sender;
-          main.appendChild(sender);
-
-          var subject = document.createElement("div");
-          subject.id = "subjectDiv";
-          subject.innerHTML = window.geemails[i].subject;
-          main.appendChild(subject);
-
-          var body = document.createElement("div");
-          body.id = "bodyDiv";
-          body.innerHTML = window.geemails[i].body;
-          main.appendChild(body);
 
           
+
+        for(var i=0; i<window.geemails.length; i++){
+
+          var emailContainer = document.createElement("div");
+          emailContainer.className = "emailContainer";
+          main.appendChild(emailContainer);
+
+          var date = document.createElement("div");
+          date.className = "dateDiv";
+          date.innerHTML = window.geemails[i].date;
+          emailContainer.appendChild(date);
+
+          var sender = document.createElement("div");
+          sender.className = "senderDiv";
+          sender.innerHTML = window.geemails[i].sender;
+          emailContainer.appendChild(sender);
+
+          var subject = document.createElement("div");
+          subject.className = "subjectDiv";
+          subject.innerHTML = window.geemails[i].subject;
+          emailContainer.appendChild(subject);
+
+          var body = document.createElement("div");
+          body.className = "bodyDiv";
+          body.innerHTML = window.geemails[i].body;
+          emailContainer.appendChild(body);
+
+
         }
+
+        subjectDiv.addEventListener("click", showBody);
+        function showBody(){
+          var bodyDiv = document.getElementsByClassName("bodyDiv");
+          if(bodyDiv.style.display === "none"){
+            bodyDiv.style.display = "block";
+          }else{
+          bodyDiv.style.display = "none";
+          }
+        }
+
       };
     </script>
 	</head>
