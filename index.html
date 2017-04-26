@@ -12,12 +12,6 @@
         emailCount.innerHTML = "Inbox: "+geemailCount;
         main.appendChild(emailCount);
 
-        function setInterval(){
-
-        }
-
-
-          
 
         for(var i=0; i<window.geemails.length; i++){
 
@@ -46,15 +40,23 @@
           emailContainer.appendChild(body);
 
 
+
         }
 
-        subjectDiv.addEventListener("click", showBody);
-        function showBody(){
-          var bodyDiv = document.getElementsByClassName("bodyDiv");
-          if(bodyDiv.style.display === "none"){
-            bodyDiv.style.display = "block";
+        setInterval(getNewMessage, 3000);
+        
+
+        //eventListener for showing body message
+        var divElem = document.getElementsByClassName("emailContainer");
+        for(var j=0; j<divElem.length; j++){
+          divElem[j].addEventListener("click", showMessage);
+        }
+        function showMessage(){
+          var divClass = this.querySelectorAll(".bodyDiv")[0];
+          if(divClass.style.display === "none"){
+            divClass.style.display = "block";
           }else{
-          bodyDiv.style.display = "none";
+          divClass.style.display = "none";
           }
         }
 
