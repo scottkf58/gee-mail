@@ -1,21 +1,46 @@
-#main {
+.emailContainer {
   border: 1px solid black;
   margin: 10px;
   padding: 20px;
+  font-family: "Roboto Condensed", sans-serif;
 
 }
 
-#senderDiv {
-	font-size: 16px;
+body{
+  background-image: url(http://images.parenting.mdpcdn.com/sites/parenting.com/files/styles/slide/public/gee-mail-funny-app.jpg?itok=DvqbRAs-);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
 
 }
 
-#dateDiv {
+h1{
+  font-family: "Pacifico", cursive;
+
+}
+
+#inboxCount{
+  font-family: "Pacifico", cursive;
+  font-size: 20px;
+}
+
+.senderDiv {
+  color: blue;
+
+}
+
+.dateDiv {
 	color: red;
-	font-size: 12px;
+  font-family: Times New Roman;
 
 }
-#subjectDiv {
-	color: blue;
-  
+.subjectDiv {
+  text-decoration: underline;
+
+	
+}
+
+.bodyDiv {
+  display: none;
+
 }
