@@ -8,9 +8,11 @@
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
 
         var emailCount = document.createElement('div');
-        var geemailCount = geemails.length;
-        emailCount.innerHTML = "Inbox: "+geemailCount;
+        emailCount.id = "inboxCount";
+        //var geemailCount = geemails.length;
+        emailCount.innerHTML = "Inbox: "+geemails.length;
         main.appendChild(emailCount);
+
 
 
         for(var i=0; i<window.geemails.length; i++){
@@ -43,8 +45,37 @@
 
         }
 
-        setInterval(getNewMessage, 3000);
-        
+        function addMail(){
+          var inboxMail = getNewMessage();
+
+          var totalMail = document.getElementById("inboxCount");
+          totalMail.innerHTML = "Inbox: "+geemails.length++;
+
+          var dateMail = document.createElement("div");
+          dateMail.className = "date";
+          dateMail.innerHTML = inboxMail.data;
+          main.appendChild(dateMail);
+
+          var senderMail = document.createElement("div");
+          senderMail.className = "sender";
+          senderMail.innerHTML = inboxMail.sender;
+          dateMail.appendChild(senderMail);
+
+          var subjectMail = document.createElement("div");
+          subjectMail.className = "subject";
+          subjectMail.innerHTML = inboxMail.subject;
+          senderMail.appendChild(subjectMail);
+
+          var bodyMail = document.createElement("div");
+          bodyMail.className = "body";
+          bodyMail.innerHTML = inboxMail.body;
+          subjectMail.appendChild(bodyMail); 
+
+        }
+
+        setInterval(addMail, 3000);
+
+      
 
         //eventListener for showing body message
         var divElem = document.getElementsByClassName("emailContainer");
